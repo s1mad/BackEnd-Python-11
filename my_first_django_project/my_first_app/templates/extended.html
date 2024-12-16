@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Привет из расширенного шаблона</h2>
+    <ul>
+        {% if names %}
+            {% for name in names %}
+                <li>{{ name|upper }}</li>
+            {% endfor %}
+        {% else %}
+            <p>Нет имён</p>
+        {% endif %}
+    </ul>
+    {% include 'partials/footer.html' %}
+{% endblock %}
